@@ -4,9 +4,10 @@ from python_aternos import Client
 import os
 
 bot = commands.Bot(command_prefix="!")
+print(os.environ['aternos_user'], os.environ['aternos_pass'],os.environ['server_id'], os.environ['TOKEN'])
 TOKEN = os.environ['TOKEN']
-aternos='' #Client.from_credentials(os.environ['aternos_user'], os.environ['aternos_pass'])
-myserver=''#aternos.get_server(os.environ['server_id'])
+aternos=Client.from_credentials(os.environ['aternos_user'], os.environ['aternos_pass'])
+myserver=aternos.get_server(os.environ['server_id'])
 
 @bot.event
 async def on_ready():
