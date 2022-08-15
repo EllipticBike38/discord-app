@@ -5,7 +5,7 @@ import os
 
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.environ['TOKEN']
-aternos='' = #Client.from_credentials(os.environ['aternos_user'], os.environ['aternos_pass'])
+aternos='' #Client.from_credentials(os.environ['aternos_user'], os.environ['aternos_pass'])
 myserver=''#aternos.get_server(os.environ['server_id'])
 
 @bot.event
