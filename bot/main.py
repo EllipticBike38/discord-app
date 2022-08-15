@@ -1,12 +1,12 @@
 
 from discord.ext import commands
 from python_aternos import Client
-import credentials
+import os
 
 bot = commands.Bot(command_prefix="!")
-TOKEN = credentials.TOKEN
-aternos = Client.from_credentials(credentials.aternos_user, credentials.aternos_pass)
-myserver=aternos.get_server(credentials.server_id)
+TOKEN = os.getenv['TOKEN']
+aternos = Client.from_credentials(os.getenv['aternos_user'], os.getenv['aternos_pass'])
+myserver=aternos.get_server(os.getenv['server_id'])
 
 @bot.event
 async def on_ready():
